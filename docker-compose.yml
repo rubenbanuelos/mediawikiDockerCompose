@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  web:
+    image: mediawiki
+    restart: always
+    ports:
+      - 8080:80
+    links:
+      - database
+    volumes:
+      - ./images:/var/www/html/images
+      # - ./LocalSettings.php:/var/www/html/LocalSettings.php
+  
+  database:
+    hostname: database
+    env_file:
+      - ./database.env
+    image: mysql
+    volumes:
+      - ./database:/var/lib/mysql
+    restart: always
