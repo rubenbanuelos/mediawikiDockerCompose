@@ -8,9 +8,8 @@ services:
       - 8080:80
     links:
       - database
-    volumes:
-      - ./images:/var/www/html/images
-      # - ./LocalSettings.php:/var/www/html/LocalSettings.php
+    #volumes:
+      #- ./www:/var/www/html
   
   database:
     hostname: database
