@@ -8,8 +8,8 @@ services:
       - 8080:80
     links:
       - database
-    #volumes:
-      #- ./www:/var/www/html
+    volumes:
+      - ./www:/var/www/html
   
   database:
     hostname: database
