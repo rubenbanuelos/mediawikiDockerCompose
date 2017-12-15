@@ -9,7 +9,7 @@ services:
     links:
       - database
     volumes:
-      - ./www:/var/www/html
+      - ./www:/var/www/
   
   database:
     hostname: database
